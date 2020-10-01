@@ -1,0 +1,127 @@
+//- Inclusion des mixins pour pouvoir les utiliser dans la page
+include mixins/_utils.pug
+
+doctype html
+html(lang="fr")
+    +head('Tableau de bord','')
+    body.body.background--admin
+        +nav('admin.html')
+        //- Cards sur les indicateurs de la biblothèque
+        .container.mx-auto.my-4
+            h1 Tableau de bord
+            .row.bg--block.rounded.p-4.my-5
+                .col
+                    h2 Indicateurs
+                    .card-deck
+                        .col.lg-4
+                            .card.card-box.mx-auto
+                                img.card-img-top.border-bottom.img-fluid(src='images/emprunts.jpg' alt='graphique démontrant le nombre de nouveaux emprunts effectués par mois à la bibliothèque')
+                                .card-body
+                                    h3.h4.card-title Nouveaux emprunts par mois
+                        .col.md-4
+                            .card.card-box.mx-auto
+                                .card-img-top.border-bottom.p-1
+                                    .progress
+                                        .progress-bar.w-50.bg--red(role='progressbar', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100', id="mardi")
+                                    label(for='mardi') Mardi
+                                    .progress
+                                        .progress-bar.w-75.bg--red(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100', id="mercredi")
+                                    label(for='mercredi') Mercredi
+                                    .progress
+                                        .progress-bar.w-75.bg--red(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100', id="jeudi")
+                                    label(for='jeudi') Jeudi
+                                    .progress
+                                        .progress-bar.w-25.bg--red(role='progressbar', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100', id="vendredi")
+                                    label(for='vendredi') Vendredi
+                                    .progress
+                                        .progress-bar.w-100.bg--red(role='progressbar', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100', id="samedi")
+                                    label(for='samedi') Samedi
+                                .card-body
+                                    h3.h4.card-title Fréquentations semaine 40
+                        .col.md-4
+                            .card.card-box.mx-auto
+                                .card-img-top.border-bottom
+                                    +calendar
+                                //- div.card-img-top.border-bottom.mx-auto
+                                //-     img.img-fluid.w-75(src='images/calendar.jpg' alt='calendrier du mois en cours')
+                                .card-body
+                                    h3.h4.card-title &Eacute;vènements
+
+            //- Tableau des dernières notices saisies
+            .row.rounded.bg--block.my-5.p-4
+                .col
+                    h2.mb-4 Derniers ouvrages saisis
+                    .table-responsive-lg
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th(scope='col') ID
+                                    th(scope='col') Titre
+                                    th(scope='col') Tome
+                                    th(scope='col') Auteur(s)
+                                    th(scope='col') Ann&eacute;e
+                                    th(scope='col') Editeur
+                                    th(scope='col') Editer
+                                    th(scope='col') Supprimer
+                                    th(scope='col') Visualiser
+                            tbody
+                                tr
+                                    th(scope='row') 001
+                                    td Peau d&apos;homme
+                                    td
+                                    td Zanzim et Hubert
+                                    td 2020
+                                    td Gl&eacute;nat
+                                    +tableBtn('peauDhomme.html', 'peauDhommePreview.html')
+                                tr
+                                    th(scope='row') 002
+                                    td Th&eacute;rapie de groupe
+                                    td 1
+                                    td Manu Larcenet
+                                    td 2020
+                                    td Dargaud
+                                    +tableBtn('therapie.html', 'therapiePreview.html')
+                                tr
+                                    th(scope='row') 003
+                                    td Moi ce que j&apos;aime c&apos;est les monstres
+                                    td 1
+                                    td Emil Ferris
+                                    td 2018
+                                    td Monsieur Toussaint Louverture
+                                    +tableBtn('monstres.html', 'monstresPreview.html')
+                                tr
+                                    th(scope='row') 004
+                                    td L&apos;arabe du futur
+                                    td 4
+                                    td Riad Sattouf
+                                    td 2018
+                                    td Allary Editions
+                                    +tableBtn('arabeFutur.html', 'arabeFuturPreview.html')
+                                tr
+                                    th(scope='row') 005
+                                    td Les sentiments du Prince Charles
+                                    td
+                                    td Liv Str&ouml;mquist
+                                    td 2010
+                                    td Rackham
+                                    +tableBtn('sentiments.html', 'sentimentsPreview.html')
+                                    
+            //- Liens vers la gestion des utlisateurs et des notices
+            .row.justify-content-center.rounded.bg--block.pb-4
+                .col-md.d-flex.flex-column.align-items-center
+                    h2.text-center.my-4 Gestion des utilisateurs
+                    .list-group
+                        a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center.list-group--size(href="#") Nouveaux utilisateur à valider
+                            span.badge.badge-primary.badge-pill 4
+                        a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center.list-group--size(href="#") Gestion des utilisateurs
+                        a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center.list-group--size(href="#") Gestion des droits
+                .col-md.d-flex.flex-column.align-items-center
+                    h2.text-center.my-4 Gestion des notices
+                    br
+                    .list-group
+                        a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center.list-group--size(href="#") Nouvelles notices à valider
+                            span.badge.badge-primary.badge-pill 12
+                        a.list-group-item.list-group-item-action.d-flex.list-group--size(href="#") Notices en ligne
+                        a.list-group-item.list-group-item-action.d-flex.list-group--size(href="#") Notices archivées
+        +footer
+        +script

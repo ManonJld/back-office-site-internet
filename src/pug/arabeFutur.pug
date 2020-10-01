@@ -1,0 +1,11 @@
+//- Inclusion des mixins pour pouvoir les utiliser dans la page
+include mixins/_utils.pug
+
+doctype html
+html(lang="fr")
+    +head('Modification d\'une notice','')
+    body.body
+        +nav('')
+        +book('L\'arabe du futur', '004','Une jeunesse au Moyen-Orient (1987-1992)', '4', 'Riad Sattouf', '2019', 'Alary Editions', 'images/arabeFutur.png', 'Couverture de la bande dessinée \"L\'Arabe du futur\"', 'Ce quatrième tome du succès mondial L\'Arabe du futur couvre les années 1987-1992. Âgé de neuf ans au début de ce volume, le petit Riad devient adolescent. Une adolescence d\'autant plus compliquée qu\'il est tiraillé entre ses deux cultures – française et syrienne – et que ses parents ne s\'entendent plus. Son père est parti seul travailler en Arabie saoudite et se tourne de plus en plus vers la religion… Sa mère est rentrée en Bretagne avec les enfants, elle ne supporte plus le virage religieux de son mari. C\'est alors que la famille au complet doit retourner en Syrie… Dans le premier tome (1978-1984), le petit Riad était ballotté, de sa naissance à ses six ans, entre la Libye de Kadhafi, la Bretagne de ses grands-parents et la Syrie de Hafez Al-Assad. Le deuxième tome (1984-1985) racontait sa première année d\'école en Syrie. Le troisième tome (1985-1987) était celui de sa circoncision. Ce quatrième tome, exceptionnel par son format (288 pages) et par ce qu\'il révèle (le coup d\'État de son père), est le point d\'orgue de la série.', 'arabeFuturPreview.html')
+        +footer
+        +script

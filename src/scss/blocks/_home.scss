@@ -1,0 +1,33 @@
+.home{
+
+    &__block{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+    }
+
+    &__text{
+        padding: 4rem;
+        box-sizing: border-box;
+        flex-grow: 2;
+        flex-shrink: 1;
+        max-width: 70%;
+    }
+
+    &__img{
+        box-sizing: border-box;
+        flex-grow: 1;
+        flex-shrink: 2;
+        width: 200px;
+
+        img{
+            padding: 4rem;
+        }
+
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}
+        

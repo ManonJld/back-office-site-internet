@@ -1,0 +1,41 @@
+.btn--green {
+    color: #fff;
+    background-color: $green;
+    border-color: $green;
+
+    :hover{
+        background-color: $dark-green;
+        border-color: $dark-green;
+    }
+}
+
+.btn-outline--green{
+    color: $green;
+    border-color: $green;
+
+    :hover{
+        color: #fff;
+        background-color: $green;
+    }
+}
+
+.btn--red{
+    color: #fff;
+    background-color: $red;
+    border-color: $red;
+
+    :hover{
+        background-color: $dark-red;
+        border-color: $dark-red;
+    }
+}
+
+.btn-outline--red{
+    color: $red;
+    border-color: $red;
+
+    :hover{
+        color: #fff;
+        background-color: $red;
+    }
+}

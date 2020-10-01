@@ -1,0 +1,34 @@
+//- Inclusion des mixins pour pouvoir les utiliser dans la page
+include mixins/_utils.pug
+
+doctype html
+html(lang="fr")
+    +head('Administration','Page pour se connecter à l\'administration du site BiblioBD')
+    //- justify-content-center align-items-center
+    //- d-flex h-100
+    body.body.background--index
+        div.container
+            div.row.justify-content-center.align-items-center.vh-100
+                div.col-md-10.col-lg-8
+                    div.text.center.shadow-lg.p-3.bg--opacity
+                        div.container
+                            div.row.align-items-end.py-3
+                                img.logo(src="images/library.png" alt="logo BiblioBD noir et blanc")
+                                h1.pl-1 BiblioBD
+                        p.h5 Connectez-vous pour acc&eacute;der &agrave; l&apos;espace d&apos;administration
+                        form(action='admin.html')
+                            p.h2 Se connecter
+                            div.form-group
+                                label(for='c1') Adresse e-mail
+                                br
+                                input#c1(type='text' name='mail' pattern='[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+' required='')
+                            div.form-group
+                                label(for='c2') Mot de passe
+                                br
+                                input#c2(type='password' name='password' pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$' required='')
+                            small.form-text.text-muted Minimum 6 caract&egrave;re : 1 majuscule, 1 minuscule et 1 chiffre
+                            br
+                            button.btn.btn--green Connexion
+                            br
+                            a.btn.btn-outline--green.my-2(href="index.html") Retour à la page d'accueil
+        +script

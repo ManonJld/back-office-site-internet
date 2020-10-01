@@ -1,0 +1,57 @@
+include mixins/_utils.pug
+
+doctype html
+html(lang="fr")
+    +head('Accueil','')
+    body.body
+        +header('')
+        +jumbotron
+        section.home
+            .container
+                .row.home__block
+                    .home__text
+                        h1 Accessible à tous
+                        p Empruntez depuis votre canapé, et recevez vos bandes dessinées directement chez vous, dans toute la France !
+                    .home__img
+                        img(src="images/digital-library.png" alt="bibliothèque qui contient des livres")
+                .row.home__block
+                    .home__text
+                        h1 Rapide et simple
+                        p Envoi des ouvrages dans les 24h, en semaine comme en weekend. Vous pouvez les garder pendant 1 mois avant de nous les renvoyer
+                    .home__img
+                        img(src="images/clock.png" alt="horloge")
+                .row.home__block
+                    .home__text
+                        h1 Large sélection
+                        p Trouvez tous ce que vous recherchez, des nouveautés aux collections anciennes, des plus populaires aux plus confidentielles
+                    .home__img
+                        img(src="images/reading.png" alt="lecteur assis sur une pile de livres")
+        section.slider
+            .container-fluid.background--admin.py-4
+                .row.justify-content-center
+                    .col-xs-12.col-sm-12.col-md-10.col-lg-10
+                        #carousel.carousel.slide(data-ride='carousel')
+                            .carousel-inner.rounded
+                                .carousel-item.active
+                                    img.d-block.w-100.text-center(src='images/sciencefiction.jpg' alt='Couverture de la bande dessinée \"Le complexe du chimpanzé\"')
+                                    .carousel-caption
+                                        h3 
+                                            a(href="#") Sélection science fiction
+                                .carousel-item
+                                    img.d-block.w-100(src='images/historique2.jpg' alt='...')
+                                    .carousel-caption
+                                        h3 
+                                            a(href="#") Sélection histoire
+                                .carousel-item
+                                    img.d-block.w-100(src='images/humour.jpg' alt='...')
+                                    .carousel-caption
+                                        h3 
+                                            a(href="#") Sélection humour
+                            a.carousel-control-prev(href='#carousel' role='button' data-slide='prev')
+                                span.carousel-control-prev-icon(aria-hidden='true')
+                                span.sr-only Previous
+                            a.carousel-control-next(href='#carousel' role='button' data-slide='next')
+                                span.carousel-control-next-icon(aria-hidden='true')
+                                span.sr-only Next
+        +footerCustomers
+        +script

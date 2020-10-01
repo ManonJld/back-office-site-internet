@@ -1,0 +1,141 @@
+// import classes bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// import des utils
+@import 'utils/fonts';
+@import 'utils/colors';
+
+// import des components
+@import 'components/title';
+@import 'components/button';
+
+// immport des blocks
+@import 'blocks/home';
+@import 'blocks/calendar';
+
+.card-box{
+    min-width: 303px;
+    max-width: 500px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.body{
+    font-family: "kumbh sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer{
+    margin-top: auto;
+}
+
+html{
+    height: 100%;
+}
+
+
+
+.background--index{
+    background: url(images/books.jpg); 
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.background--admin{
+    background-color: #F2F2F2;
+}
+
+.bg--opacity{
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.bg--block{
+    background-color:  white;
+}
+
+.bg--green{
+    background-color: $green;
+}
+
+.bg--red{
+    background-color: $red;
+}
+
+
+
+.hide{
+    display: none;
+}
+
+.icon{
+    width: 80px;
+}
+
+.img--responsive{
+    max-width: 100%;
+    max-height: 500px;
+    display: block;
+}
+
+.img--modal{
+    max-width: 100%;
+}
+
+.img--responsive--2{
+    max-width: 100%;
+    max-height: 200px;
+}
+
+
+.jumbotron--green{
+    background-color: $green-opac;
+}
+
+.logo{
+    max-width: 100%;
+    max-height: 5rem;
+    display: block;
+}
+
+.police-bigger{
+    font-size: 2em;
+}
+
+.bigger-cross{
+    font-size: 1.5em;
+}
+
+.p--bold{
+    font-weight: bold;
+}
+td a svg:hover {
+    fill: #024dbc;
+}
+
+
+
+
+.list-group--size{
+    font-size: 16px;
+    width: 350px;
+}
+
+.slider a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.slider a:hover{
+    color: white;
+}
