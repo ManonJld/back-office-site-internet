@@ -15,17 +15,17 @@ mixin head(pageTitle, description)
         meta(name='msapplication-TileColor' content='#da532c')
         meta(name='msapplication-config' content='/favicons/browserconfig.xml')
         meta(name='theme-color' content='#ffffff')
-        link(rel="stylesheet" href="css/styles.css")
+        link(rel="stylesheet" href="css/styles-purged.css")
 
 //- navbar coté administration
 mixin nav(current)
-    nav.navbar.navbar-expand-md.bg--green.navbar-dark
-        div.container
+    nav.navbar.navbar-expand-lg.bg--green.navbar-dark
+        div.container-fluid
             a.navbar-brand(href='admin.html')
-                img(src="images/library.png" alt="Logo" width="60")
+                img(src="images/library.png" alt="Logo" height="24")
             button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
                 span.navbar-toggler-icon
-            div.collapse.navbar-collapse#collapsibleNavbar
+            #collapsibleNavbar.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.nav-item
                         a.nav-link(href="admin.html" class=(current == 'admin.html' ? 'active' : '')) Tableau de bord
@@ -37,8 +37,9 @@ mixin nav(current)
                         a.nav-link(href="acquisition.html" class=(current == 'acquisition.html' ? 'active' : '')) Achats
                 ul.navbar-nav.d-inline
                     li.nav-item.dropdown
-                        a.nav-link.dropdown-toggle(href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Mon compte
-                        div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                        a.nav-link.dropdown-toggle(href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ) 
+                            | Mon compte
+                        .dropdown-menu.dropdown-menu-right(aria-labelledby="navbarDropdownMenuLink")
                             a.dropdown-item(href="account.html") Paramètres
                             a.dropdown-item(href="index.html") Se déconnecter
 
@@ -175,6 +176,7 @@ mixin preview(title, tomeTitle, tomeNumber, author, year, editor, image, imageAl
                         p <i>#{editor}, #{year}</i>
                         p #{abstract}
 
+//- Calendrier des événements affiché sur le tableau de bord
 mixin calendar
     .month
         ul
@@ -269,7 +271,8 @@ mixin footerCustomers
                                 img(src="images/twitter.png" alt="Logo instagram" width="32")
 
 mixin script
-    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+    script(src="quill.js")
+    script(src="jquery.js")
+    script(src="popper.js")
+    script(src="bootstrap.bundle.js")
 

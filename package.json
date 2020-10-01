@@ -42,27 +42,31 @@
     },
     "scripts": {
         "css-scss": "node-sass ./src/scss/ --output ./dist/css/ --output-style compressed",
-        "css-purge": "purgecss --css ./dist/css/styles.css --content ./src/pug/*.pug --output ./dist/css/styles-purged.css",
+        "css-purge": "purgecss --css ./dist/css/styles.css --content ./src/pug/*.pug ./src/pug/**/*.pug ./dist/*.js --output ./dist/css/styles-purged.css",
         "css": "run-s css-scss css-purge",
         "fonts": "cp -r ./src/fonts ./dist/",
         "favicons": "cp -r ./src/favicons ./dist/",
         "html-pug": "pug src/pug --out dist/ --pretty",
         "html": "run-s html-pug css-purge",
+        "js-jquery": "cp ./node_modules/jquery/dist/jquery.js ./dist/",
+        "js-popper": "cp ./node_modules/popper.js/dist/umd/popper.js ./dist/",
+        "js-bootstrap": "cp ./node_modules/bootstrap/dist/js/bootstrap.bundle.js ./dist/",
+        "js": "run-p js-*",
         "images-jpg": "imagemin ./src/images/*.jpg --out-dir=./dist/images --plugin=mozjpeg",
         "images-others": "imagemin ./src/images/* --out-dir=./dist/images",
         "images": "run-s images-others images-jpg",
-        "clear": "rm -rf ./dist/*",
+        "clear": "rm -rf ./dist && make-dir ./dist",
         "watch": "npm-watch",
         "r": "reload --dir ./dist --exts css --browser --port 1990",
-        "start": "run-s clear html watch",
-        "build": "run-s clear html-pug css images fonts favicons",
-        "w": "run-s html-pug css-scss images watch "
+        "start": "run-s clear js html watch",
+        "build": "run-s clear js html-pug css images fonts favicons"
     },
     "author": "dcdev5",
     "license": "ISC",
     "devDependencies": {
         "imagemin-cli": "^6.0.0",
         "imagemin-mozjpeg": "^9.0.0",
+        "make-dir-cli": "^2.0.0",
         "node-sass": "^4.14.1",
         "npm-run-all": "^4.1.5",
         "npm-watch": "^0.7.0",
@@ -72,6 +76,8 @@
         "reload": "^3.1.0"
     },
     "dependencies": {
-        "bootstrap": "^4.5.2"
+        "bootstrap": "^4.5.2",
+        "jquery": "^3.5.1",
+        "popper.js": "^1.16.1"
     }
 }
