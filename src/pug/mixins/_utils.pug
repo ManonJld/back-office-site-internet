@@ -74,7 +74,7 @@ mixin jumbotron
         h2 Les nouveautés sont arrivées !
         p.lead
             | Il y a de tous les style : bande dessinée, roman graphique, manga,.... Et pour tous les goûts : science fiction, policier, tranche de vie, historique,...
-        a.btn.btn-outline-light(href='#', role='button') Consulter les nouveautés
+        a.btn.btn-outline-light(href='new.html', role='button') Consulter les nouveautés
 
 //- 3 dernières colonnes du tableau des dernières notices saisies, avec les bouton editer, supprimer et prévisualiser
 mixin tableBtn(url, urlPrev)
@@ -156,7 +156,7 @@ mixin book(title, id, tomeTitle, tomeNumber, author, year, editor, image, imageA
             div
                 a.btn.btn-outline--green.mb-3(href=preview target='_blank') Aper&ccedil;u de la page
 
-//- page de prévisualisation d'un livre côté client
+//- page de prévisualisation d'une notice côté client
 mixin preview(title, tomeTitle, tomeNumber, author, year, editor, image, imageAlt, abstract)
     div.container.px-0
         .row.justify-content-center.m-4
@@ -168,7 +168,16 @@ mixin preview(title, tomeTitle, tomeNumber, author, year, editor, image, imageAl
                                 img.fluid.img--responsive.mx-auto(src=image alt=imageAlt)
                         .row.pt-4
                             .col-12.text-center
-                                a.btn.btn-lg.btn--red.mt-4(href="#") Emprunter
+                                a.btn.btn-lg.btn--red.mt-4(type="button" data-toggle="modal" data-target="#borrow") Emprunter
+                                div.modal.fade(id="borrow" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="borrow" aria-hidden="true")
+                                    div.modal-dialog
+                                        div.modal-content
+                                            div.modal-header.mx-auto
+                                                h5.modal-title Emprunter un ouvrage
+                                            div.modal-body.mx-auto
+                                                p Connectez-vous à votre compte pour pouvoir emprunter un ouvrage !
+                                                button.btn.btn-outline--green.mr-3(type="button" data-dismiss="modal") Fermer
+                                                a.btn.btn-outline--red(href="connectionLec.html") Se connecter
                     article.col-sm-12.col-lg-6.pt-4
                         h1 #{title}
                         p #{tomeNumber} #{tomeTitle}

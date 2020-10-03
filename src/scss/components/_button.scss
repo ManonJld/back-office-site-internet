@@ -3,7 +3,8 @@
     background-color: $green;
     border-color: $green;
 
-    :hover{
+    &:hover{
+        color: #fff;
         background-color: $dark-green;
         border-color: $dark-green;
     }
@@ -13,7 +14,7 @@
     color: $green;
     border-color: $green;
 
-    :hover{
+    &:hover{
         color: #fff;
         background-color: $green;
     }
@@ -24,7 +25,8 @@
     background-color: $red;
     border-color: $red;
 
-    :hover{
+    &:hover{
+        color: #fff;
         background-color: $dark-red;
         border-color: $dark-red;
     }
@@ -34,7 +36,7 @@
     color: $red;
     border-color: $red;
 
-    :hover{
+    &:hover{
         color: #fff;
         background-color: $red;
     }
