@@ -1,5 +1,7 @@
 //- Inclusion des mixins pour pouvoir les utiliser dans la page
 include mixins/_utils.pug
+//- Inclusion des includes pour accéder au tableau qui contient les données
+include includes/_bds.pug
 
 doctype html
 html(lang="fr")
@@ -65,46 +67,17 @@ html(lang="fr")
                                     th(scope='col') Supprimer
                                     th(scope='col') Visualiser
                             tbody
-                                tr
-                                    th(scope='row') 001
-                                    td Peau d&apos;homme
-                                    td
-                                    td Zanzim et Hubert
-                                    td 2020
-                                    td Gl&eacute;nat
-                                    +tableBtn('peauDhomme.html', 'peauDhommePreview.html')
-                                tr
-                                    th(scope='row') 002
-                                    td Th&eacute;rapie de groupe
-                                    td 1
-                                    td Manu Larcenet
-                                    td 2020
-                                    td Dargaud
-                                    +tableBtn('therapie.html', 'therapiePreview.html')
-                                tr
-                                    th(scope='row') 003
-                                    td Moi ce que j&apos;aime c&apos;est les monstres
-                                    td 1
-                                    td Emil Ferris
-                                    td 2018
-                                    td Monsieur Toussaint Louverture
-                                    +tableBtn('monstres.html', 'monstresPreview.html')
-                                tr
-                                    th(scope='row') 004
-                                    td L&apos;arabe du futur
-                                    td 4
-                                    td Riad Sattouf
-                                    td 2018
-                                    td Allary Editions
-                                    +tableBtn('arabeFutur.html', 'arabeFuturPreview.html')
-                                tr
-                                    th(scope='row') 005
-                                    td Les sentiments du Prince Charles
-                                    td
-                                    td Liv Str&ouml;mquist
-                                    td 2010
-                                    td Rackham
-                                    +tableBtn('sentiments.html', 'sentimentsPreview.html')
+                                each bd in bds
+                                    if bd.id == '001'
+                                        +tableRow(bd.id, bd.title, bd.tomeNumber, bd.author, bd.year, bd.editor, bd.url, bd.preview)
+                                    if bd.id == '002'
+                                        +tableRow(bd.id, bd.title, bd.tomeNumber, bd.author, bd.year, bd.editor, bd.url, bd.preview)
+                                    if bd.id == '003'
+                                        +tableRow(bd.id, bd.title, bd.tomeNumber, bd.author, bd.year, bd.editor, bd.url, bd.preview)
+                                    if bd.id == '004'
+                                        +tableRow(bd.id, bd.title, bd.tomeNumber, bd.author, bd.year, bd.editor, bd.url, bd.preview)
+                                    if bd.id == '005'
+                                        +tableRow(bd.id, bd.title, bd.tomeNumber, bd.author, bd.year, bd.editor, bd.url, bd.preview)
                                     
             //- Liens vers la gestion des utlisateurs et des notices
             .row.justify-content-center.rounded.bg--block.my-5.pb-4
