@@ -1,3 +1,5 @@
+First static html-css project. You can see thhe result here : http://manonjeuland.fr/bibliobd/
+
 Install necessary packages :
 npm i
 

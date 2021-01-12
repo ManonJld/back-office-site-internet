@@ -88,6 +88,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.idea
 
 # TypeScript v1 declaration files
 typings/
@@ -199,3 +200,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,node,sass,macos,linux
+
